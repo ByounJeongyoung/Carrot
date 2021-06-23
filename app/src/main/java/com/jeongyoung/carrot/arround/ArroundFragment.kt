@@ -12,19 +12,18 @@ import com.jeongyoung.carrot.databinding.FragmentArroundBinding
 
 class ArroundFragment : Fragment() {
 
-    private var fragmentArroundBinding: FragmentArroundBinding? = null
-
+    private lateinit var binding: FragmentArroundBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentArroundBinding.inflate(inflater, container, false)
-        fragmentArroundBinding = binding
+         binding = FragmentArroundBinding.inflate(inflater, container, false)
+
 
         val recommendWordAdapter = RecommendWordAdapter()
         val recommendIconAdapter = RecommendIconAdapter()
-        fragmentArroundBinding!!.apply {
+        binding.apply {
             recyclerWord.adapter = recommendWordAdapter
             recyclerWord.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
@@ -34,7 +33,7 @@ class ArroundFragment : Fragment() {
 
         
 
-        return fragmentArroundBinding!!.root
+        return binding.root
 
 
     }

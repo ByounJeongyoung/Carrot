@@ -161,10 +161,10 @@
                 android:id="@+id/arround_inform_1"
                 android:layout_width="0dp"
                 android:layout_height="115dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/arround_inform1"
                 android:clickable="true"
                 android:scaleType="fitXY"
-                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/arround_inform" />
@@ -184,11 +184,11 @@
                 android:id="@+id/arround_inform_2"
                 android:layout_width="0dp"
                 android:layout_height="115dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/arround_inform2"
                 android:clickable="true"
                 android:scaleType="fitXY"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/line3" />
@@ -197,9 +197,9 @@
                 android:id="@+id/line4"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
-                android:background="#F2F3F7"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="#F2F3F7"
                 app:layout_constraintBottom_toTopOf="@id/arround_inform_3"
                 app:layout_constraintEnd_toEndOf="@id/appCompatButton2"
                 app:layout_constraintStart_toStartOf="@id/line3"
@@ -209,11 +209,11 @@
                 android:id="@+id/arround_inform_3"
                 android:layout_width="0dp"
                 android:layout_height="115dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/arround_inform3"
                 android:clickable="true"
                 android:scaleType="fitXY"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 app:layout_constraintEnd_toEndOf="@id/appCompatButton2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/line4" />
@@ -233,20 +233,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/arround_inform_3" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/arround_inform"
-                app:layout_constraintTop_toBottomOf="@id/appCompatButton2"
-                android:text="이웃들의 추천 가게"
-                android:textStyle="bold"
                 android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="이웃들의 추천 가게"
                 android:textColor="@color/black"
-                android:textSize="19sp"/>
-
-
-
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/arround_inform"
+                app:layout_constraintTop_toBottomOf="@id/appCompatButton2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </FrameLayout>

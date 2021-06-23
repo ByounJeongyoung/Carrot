@@ -2,6 +2,7 @@ package com.jeongyoung.carrot.arround
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.jeongyoung.carrot.databinding.FragmentArroundRecommendListBinding
 
@@ -15,6 +16,11 @@ class RecommendWordAdapter : RecyclerView.Adapter<RecommendWordAdapter.recommend
         fun setMemo(word: String) {
             binding.word.text = word
         }
+        init {
+            binding.root.setOnClickListener{
+                Toast.makeText(binding.root.context,binding.word.text.toString(),Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onCreateViewHolder(
@@ -25,7 +31,7 @@ class RecommendWordAdapter : RecyclerView.Adapter<RecommendWordAdapter.recommend
         return recommendHolder((binding))
     }
 
-    override fun onBindViewHolder(holder: recommendHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecommendWordAdapter.recommendHolder, position: Int) {
         val word = listData.get(position)
         holder.setMemo(word)
     }
