@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/arroundFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".arround.ArroundFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="내 근처"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_btn_icon"
+                android:layout_width="27dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/app_bar_write"
+                android:backgroundTint="#E8000000" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/menu_btn_icon"
+                android:layout_width="27dp"
+                android:layout_height="29dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/app_bar_center"
+                android:backgroundTint="#D8000000" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/notification_btn"
+                android:layout_width="27dp"
+                android:layout_height="29dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_outline_notifications_24"
+                android:backgroundTint="#D8000000" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="58dp"
+            android:background="#D6D6D6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/arround_search_background"
+                android:gravity="start|center_vertical"
+                android:paddingStart="38dp"
+                android:text="이의동 주변 가게를 찾아보세요"
+                android:textColor="#888B92"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_baseline_search_24"
+                app:layout_constraintBottom_toBottomOf="@+id/search_btn"
+                app:layout_constraintEnd_toEndOf="@+id/search_btn"
+                app:layout_constraintHorizontal_bias="0.041"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/search_btn" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_btn" />
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="0dp"
+                android:layout_height="9dp"
+                android:layout_marginTop="16dp"
+                android:background="#F2F3F7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_word" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_grid_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2" />
+
+            <TextView
+                android:id="@+id/arround_inform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text=" 내 근처 소식"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/search_btn"
+                app:layout_constraintTop_toBottomOf="@id/recycler_grid_icon" />
+
+            <ImageView
+                android:id="@+id/arround_inform_1"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:background="@drawable/arround_inform1"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arround_inform" />
+
+            <TextView
+                android:id="@+id/line3"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="#F2F3F7"
+                app:layout_constraintBottom_toTopOf="@id/arround_inform_2"
+                app:layout_constraintEnd_toEndOf="@id/appCompatButton2"
+                app:layout_constraintStart_toStartOf="@+id/arround_inform"
+                app:layout_constraintTop_toBottomOf="@id/arround_inform_1" />
+
+            <ImageView
+                android:id="@+id/arround_inform_2"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:background="@drawable/arround_inform2"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3" />
+
+            <TextView
+                android:id="@+id/line4"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#F2F3F7"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toTopOf="@id/arround_inform_3"
+                app:layout_constraintEnd_toEndOf="@id/appCompatButton2"
+                app:layout_constraintStart_toStartOf="@id/line3"
+                app:layout_constraintTop_toBottomOf="@id/arround_inform_2" />
+
+            <ImageView
+                android:id="@+id/arround_inform_3"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:background="@drawable/arround_inform3"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="@id/appCompatButton2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line4" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/around_inform"
+                android:gravity="center"
+                android:text="내 근처 소식 전체보기  >"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arround_inform_3" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/arround_inform"
+                app:layout_constraintTop_toBottomOf="@id/appCompatButton2"
+                android:text="이웃들의 추천 가게"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black"
+                android:textSize="19sp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
