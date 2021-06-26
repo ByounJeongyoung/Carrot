@@ -8,11 +8,13 @@ import com.jeongyoung.carrot.databinding.ActivityMainBinding
 
 class DetailActivity : AppCompatActivity() {
 
+    private lateinit var mainActivity: MainActivity
     private lateinit var binding: ActivityDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mainActivity = MainActivity()
 
         val img = intent.getIntExtra("img",0)
         val title = intent.getStringExtra("title")
@@ -25,8 +27,6 @@ class DetailActivity : AppCompatActivity() {
             timeTxt.text = time.toString()
             contentTxt.text = content.toString()
         }
-
-
 
     }
 }

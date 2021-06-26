@@ -21,6 +21,7 @@
             android:layout_width="419dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
+            android:transitionName="image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -34,6 +35,7 @@
             android:text="TextView"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:transitionName="title"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

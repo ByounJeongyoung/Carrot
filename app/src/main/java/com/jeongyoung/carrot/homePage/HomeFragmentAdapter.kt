@@ -17,9 +17,19 @@ import com.jeongyoung.carrot.databinding.FragmentArroundIconListBinding
 import com.jeongyoung.carrot.databinding.FragmentHomeItemBinding
 
 
-class HomeFragmentAdapter() : RecyclerView.Adapter<HomeFragmentAdapter.Holder>() {
+class HomeFragmentAdapter() : RecyclerView.Adapter<HomeFragmentAdapter.Holder>(){
 
     var listData = mutableListOf<MerchandiseModel>()
+
+    interface OnItemClickListener{
+        fun onItemClick(binding: FragmentHomeItemBinding, model: MerchandiseModel, pos : Int)
+    }
+
+    private var listener : OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener : OnItemClickListener) {
+        this.listener = listener
+    }
 
     inner class Holder(val binding: FragmentHomeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -32,29 +42,34 @@ class HomeFragmentAdapter() : RecyclerView.Adapter<HomeFragmentAdapter.Holder>()
                 timeTxt.text = model.time
                 priceTxt.text = model.price
             }
-            binding.root.setOnClickListener {
 
-                val intent = Intent(binding.root.context, DetailActivity::class.java)
-                intent.apply {
-                    putExtra("img",model.img)
-                    putExtra("title", model.title)
-                    putExtra("time", model.time)
-                    putExtra("price", model.price)
-                    putExtra("content",model.content)
+            val pos = adapterPosition
+            if(pos!= RecyclerView.NO_POSITION)
+            {
+                binding.root.setOnClickListener {
+                    listener?.onItemClick(binding,model,pos)
                 }
-
-
-
-                startActivity(binding.root.context, intent, bundleOf())
-
-
-                Toast.makeText(
-                    binding.root.context, "상품이름:${binding.titleTxt.text.toString()}\n" +
-                            "올라온시간:${binding.timeTxt.text.toString()}\n" +
-                            "가격:${binding.priceTxt.text.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
+//            binding.root.setOnClickListener {
+//
+//                val intent = Intent(binding.root.context, DetailActivity::class.java)
+//                intent.apply {
+//                    putExtra("img",model.img)
+//                    putExtra("title", model.title)
+//                    putExtra("time", model.time)
+//                    putExtra("price", model.price)
+//                    putExtra("content",model.content)
+//                }
+//
+//                startActivity(binding.root.context, intent, bundleOf())
+
+//                Toast.makeText(
+//                    binding.root.context, "상품이름:${binding.titleTxt.text.toString()}\n" +
+//                            "올라온시간:${binding.timeTxt.text.toString()}\n" +
+//                            "가격:${binding.priceTxt.text.toString()}",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+            //            }
 
         }
 

@@ -20,7 +20,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/home_img"
+            android:transitionName="image"
+            android:id="@+id/homeImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/home_img_background"
@@ -38,6 +39,7 @@
         android:layout_marginStart="24dp"
         android:hint="면도기"
         android:text="면도기"
+        android:transitionName="title"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/card_view"
