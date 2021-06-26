@@ -1,5 +1,6 @@
 package com.jeongyoung.carrot
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -28,7 +29,10 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
-
-
     }
+
+//    fun changeBackground(){
+//
+//        binding.mainBackgroundColor.setBackgroundColor(Color.RED)
+//    }
 }

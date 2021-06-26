@@ -31,10 +31,6 @@ class ArroundFragment : Fragment() {
             recyclerGridIcon.layoutManager = GridLayoutManager(context,4)
         }
 
-        
-
         return binding.root
-
-
     }
 }

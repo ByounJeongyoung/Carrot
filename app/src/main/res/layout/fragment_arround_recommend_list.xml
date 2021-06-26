@@ -17,7 +17,7 @@
         android:paddingBottom="10dp"
         android:text="중국어"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="#404042"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

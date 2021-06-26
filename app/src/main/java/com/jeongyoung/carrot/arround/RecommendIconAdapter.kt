@@ -1,10 +1,15 @@
 package com.jeongyoung.carrot.arround
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
+import com.jeongyoung.carrot.DetailActivity
 import com.jeongyoung.carrot.R
 import com.jeongyoung.carrot.databinding.FragmentArroundIconListBinding
 import kotlin.coroutines.coroutineContext
@@ -29,6 +34,7 @@ class RecommendIconAdapter : RecyclerView.Adapter<RecommendIconAdapter.Holder>()
         RecyclerView.ViewHolder(binding.root){
             init {
                 binding.root.setOnClickListener{
+
                     Toast.makeText(binding.root.context,"아이콘을 클릭 하셨습니다",Toast.LENGTH_SHORT).show()
                 }
             }

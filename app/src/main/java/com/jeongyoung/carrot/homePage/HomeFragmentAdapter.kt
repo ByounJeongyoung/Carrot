@@ -1,11 +1,16 @@
 package com.jeongyoung.carrot.homePage
 
 import android.content.ClipData
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
+import com.jeongyoung.carrot.DetailActivity
 import com.jeongyoung.carrot.R
 import com.jeongyoung.carrot.arround.RecommendIconAdapter
 import com.jeongyoung.carrot.databinding.FragmentArroundIconListBinding
@@ -27,16 +32,30 @@ class HomeFragmentAdapter() : RecyclerView.Adapter<HomeFragmentAdapter.Holder>()
                 timeTxt.text = model.time
                 priceTxt.text = model.price
             }
-
-        }
-
-        init {
             binding.root.setOnClickListener {
-                Toast.makeText(binding.root.context, "상품이름:${binding.titleTxt.text.toString()}\n" +
-                        "올라온시간:${binding.timeTxt.text.toString()}\n" +
-                        "가격:${binding.priceTxt.text.toString()}",
-                    Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(binding.root.context, DetailActivity::class.java)
+                intent.apply {
+                    putExtra("img",model.img)
+                    putExtra("title", model.title)
+                    putExtra("time", model.time)
+                    putExtra("price", model.price)
+                    putExtra("content",model.content)
+                }
+
+
+
+                startActivity(binding.root.context, intent, bundleOf())
+
+
+                Toast.makeText(
+                    binding.root.context, "상품이름:${binding.titleTxt.text.toString()}\n" +
+                            "올라온시간:${binding.timeTxt.text.toString()}\n" +
+                            "가격:${binding.priceTxt.text.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+
         }
 
     }

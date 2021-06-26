@@ -4,29 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_view"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="18dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-    <ImageView
-        android:id="@+id/home_img"
-        android:layout_width="103dp"
-        android:layout_height="102dp"
-        android:background="@drawable/home_img_background"
-        android:scaleType="fitXY"
-        android:src="@drawable/home_pic_3"
-        app:layout_constraintBottom_toTopOf="@id/line4"
+    app:layoutDescription="@xml/fragment_home_item_scene3">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="18dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/home_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/home_img_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_pic_3"
+            app:layout_constraintBottom_toTopOf="@id/line4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/title_txt"
@@ -47,6 +50,7 @@
         android:layout_marginTop="12dp"
         android:text="광교 1동 끌올 5초전"
         android:textSize="12sp"
+
         app:layout_constraintStart_toStartOf="@+id/title_txt"
         app:layout_constraintTop_toBottomOf="@+id/title_txt" />
 
@@ -61,11 +65,20 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/title_txt"
         app:layout_constraintTop_toBottomOf="@+id/time_txt" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/line4"
+        android:background="@drawable/ic_like"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#74000000"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/line4"
         android:layout_width="0dp"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:layout_marginEnd="16dp"
         android:background="#F2F3F7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,5 +87,7 @@
         app:layout_constraintStart_toStartOf="@id/card_view"
         app:layout_constraintTop_toBottomOf="@id/card_view"
         app:layout_constraintVertical_bias="0.923" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

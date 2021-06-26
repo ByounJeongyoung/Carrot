@@ -19,7 +19,7 @@
             android:gravity="center"
             android:text="내 근처"
             android:textColor="@color/black"
-            android:textSize="21sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/line1"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +38,10 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/search_btn_icon"
-                android:layout_width="27dp"
-                android:layout_height="26dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/app_bar_write"
-                android:backgroundTint="#E8000000" />
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:stateListAnimator="@null"
+                android:background="@drawable/edit" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/menu_btn_icon"
@@ -76,6 +75,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbars="none"
         android:layout_marginTop="94dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,11 +88,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/arround_search_background"
                 android:gravity="start|center_vertical"
                 android:paddingStart="38dp"
+                android:stateListAnimator="@null"
+
                 android:text="이의동 주변 가게를 찾아보세요"
                 android:textColor="#888B92"
                 android:textSize="16sp"
@@ -116,7 +117,7 @@
                 android:id="@+id/recycler_word"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="14dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +128,7 @@
                 android:id="@+id/line2"
                 android:layout_width="0dp"
                 android:layout_height="9dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="14dp"
                 android:background="#F2F3F7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -150,6 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:elevation="10dp"
                 android:text=" 내 근처 소식"
                 android:textColor="@color/black"
                 android:textSize="19sp"
@@ -227,7 +229,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/around_inform"
+                android:elevation="0dp"
                 android:gravity="center"
+                android:stateListAnimator="@null"
                 android:text="내 근처 소식 전체보기  >"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -235,6 +239,7 @@
                 app:layout_constraintTop_toBottomOf="@id/arround_inform_3" />
 
             <TextView
+                android:id="@+id/recommend_txt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -245,6 +250,90 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/arround_inform"
                 app:layout_constraintTop_toBottomOf="@id/appCompatButton2" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingTop="40dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toTopOf="@id/recommend_txt">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="290dp"
+                        android:layout_height="260dp"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="23dp"
+                        android:src="@drawable/arround_hori_scroll_2"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="290dp"
+                        android:layout_height="260dp"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="23dp"
+                        android:src="@drawable/arround_hori_scroll_1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="290dp"
+                        android:layout_height="260dp"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="23dp"
+                        android:src="@drawable/arround_hori_scroll_2"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="290dp"
+                        android:layout_height="260dp"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="23dp"
+                        android:src="@drawable/arround_hori_scroll_3"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="290dp"
+                        android:layout_height="260dp"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="23dp"
+                        android:src="@drawable/arround_hori_scroll_1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/arround_bottom"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_scroll"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </FrameLayout>

@@ -5,9 +5,12 @@
     <string name="addText">중고거래</string>
     <string name="noticeText">동네홍보</string>
 
-        <string-array name="app_bar">
-            <item>영천동</item>
-            <item>이의동</item>
-        </string-array>
+    <string-array name="app_bar">
+        <item>영천동</item>
+        <item>이의동</item>
+    </string-array>
+
+    <string name="content1">운동화 팝니다 얼마 신지 않았어요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ 직거래 가능합니다 패션의 트렌드!!나이키 운동화와 함께 하세요
+    운동화 팝니다 얼마 신지 않았어요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ 직거래 가능합니다 패션의 트렌드!!나이키 운동화와 함께 하세요</string>
 
 </resources>
