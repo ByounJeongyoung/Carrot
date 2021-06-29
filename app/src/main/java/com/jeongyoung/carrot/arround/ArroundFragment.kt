@@ -1,5 +1,6 @@
 package com.jeongyoung.carrot.arround
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jeongyoung.carrot.databinding.FragmentArroundBinding
+import com.jeongyoung.carrot.notification.NotificationActivity
 
 
 class ArroundFragment : Fragment() {
@@ -19,7 +21,9 @@ class ArroundFragment : Fragment() {
     ): View? {
 
          binding = FragmentArroundBinding.inflate(inflater, container, false)
-
+        binding.notificationBtn.setOnClickListener {
+            startActivity(Intent(context,NotificationActivity::class.java))
+        }
 
         val recommendWordAdapter = RecommendWordAdapter()
         val recommendIconAdapter = RecommendIconAdapter()

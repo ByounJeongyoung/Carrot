@@ -17,5 +17,9 @@
 
         <!-- Animation -->
         <item name="android:windowActivityTransitions">true</item>
+
+            <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
 </resources>

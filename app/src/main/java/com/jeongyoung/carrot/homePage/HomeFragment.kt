@@ -1,6 +1,7 @@
 package com.jeongyoung.carrot.homePage
 
 import android.app.ActivityOptions
+
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter.create
@@ -9,7 +10,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Pair.create
-import androidx.fragment.app.Fragment
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,7 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.get
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat.create
 import com.jeongyoung.carrot.DetailActivity
@@ -78,17 +80,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private var clickedBar = false
 
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        mainActivity = context as MainActivity
-    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
 
 
         //RecyclerView Model in Home Fragment
@@ -156,8 +153,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             add(MerchandiseModel(R.drawable.home_pic_2, "스피커", "영천동", "90,000"))
         }
 
+
+
+
+
         val homeFragmentAdapter = HomeFragmentAdapter()
         //Connect model list with Adapter's model list
+        mainActivity = context as MainActivity
         homeFragmentAdapter.listData = model
         homeFragmentAdapter.setOnItemClickListener(object :
             HomeFragmentAdapter.OnItemClickListener {
@@ -260,8 +262,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             // FloatingActionBtn tint 변경
             binding.apply {
                 plusButton.apply {
-                    backgroundTintList = ColorStateList.valueOf(Color.DKGRAY)
-
+                    backgroundTintList = ColorStateList.valueOf(Color.parseColor("#F46060"))
+                    setRippleColor(Color.TRANSPARENT)
 
                 }
                 plusButton.setImageResource(R.drawable.ic_add_after)
@@ -270,7 +272,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             binding.apply {
                 plusButton.apply {
                     backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF7F00"))
-                    setRippleColor(Color.BLUE)
+                    setRippleColor(Color.TRANSPARENT)
 
                 }
             }

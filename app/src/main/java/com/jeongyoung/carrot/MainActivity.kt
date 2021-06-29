@@ -30,9 +30,4 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
     }
-
-//    fun changeBackground(){
-//
-//        binding.mainBackgroundColor.setBackgroundColor(Color.RED)
-//    }
 }
